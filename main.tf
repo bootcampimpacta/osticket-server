@@ -58,3 +58,7 @@ resource "aws_eip" "osticket-ip" {
   instance = module.osticket_ec2_instance.id
   vpc      = true
 }
+
+output "ip_acesso_osticket" {
+  value = "Acesse o OsTicket pela URL http://${aws_eip.osticket-ip.public_ip}:8080/scp/"
+}
